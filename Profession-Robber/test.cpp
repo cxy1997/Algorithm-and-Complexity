@@ -20,11 +20,11 @@ void test(const char* finname, const char* foutname)
     v[0] = 0;
     for (int i = 1; i <= n; ++i) fin >> v[i];
     fin.close();
-    //int dfs_res = dfs(v, n); // dfs 复杂度太高 只能进行小数据测试
+    int dfs_res = dfs(v, n); // dfs 复杂度太高 只能进行小数据测试
     int dp_res = dp(v, n);
-    //fout << "标准答案为\t" << dfs_res << '\n';
+    fout << "标准答案为\t" << dfs_res << '\n';
     fout << "DP算法答案为\t" << dp_res << '\n';
-	cout << "测试结果已写入" << foutname << /*",标准答案为 " << dfs_res << */", DP算法答案为 " << dp_res /*<< ", DP算法"*/;/*
+	cout << "测试结果已写入" << foutname << ",标准答案为 " << dfs_res << ", DP算法答案为 " << dp_res << ", DP算法";
 	if (dp_res == dfs_res)
 	{
 	    cout << "正确!\n";
@@ -33,7 +33,7 @@ void test(const char* finname, const char* foutname)
     {
         cout << "错误!\n";
         fout << "错误!";
-    }*/
+    }
     cout<<'\n';
 	delete [] v;
     fout.close();
